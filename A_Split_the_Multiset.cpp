@@ -5,25 +5,24 @@ using namespace std;
 #define loop(n) for (int i = 0; i < n; i++)
 void solve()
 {
-    int t;
+    ll t;
     cin >> t;
     while (t--)
     {
-        int n;
-        cin >> n;
-        int left = 1;
-        int right = n;
-        while (left < right)
+        ll n, k;
+        cin >> n >> k;
+        ll ans = 0;
+        if (n == 1)
+            cout << 0 << endl;
+        else
         {
-            cout << left << ' ' << right << ' ';
-            left++;
-            right--;
+            while (n > k)
+            {
+                n = n - (k - 1);
+                ans++;
+            }
+            cout << ++ans << endl;
         }
-        if (n % 2 == 1)
-        {
-            cout << right;
-        }
-        cout << endl;
     }
 }
 int main()
